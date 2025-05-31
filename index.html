@@ -215,19 +215,19 @@ border-radius: 8px;
 
 /* Updated .stat-number to use Merriweather font with weight 700 */
 .stat-number {
-font-family: 'Merriweather', serif;
-font-size: 2.5rem;
+font-family: 'Merriweather', serif; 
+font-size: 2.5rem; 
 font-weight: 700; /* Updated font weight */
-color: var(--stat-number-color);
+color: var(--stat-number-color); 
 display: block;
-margin-bottom: 0.25rem;
+margin-bottom: 0.25rem; 
 }
 
 .stat-label {
-font-family: 'Lato', sans-serif;
-font-size: 1rem;
+font-family: 'Lato', sans-serif; 
+font-size: 1rem; 
 font-weight: 400;
-color: var(--white);
+color: var(--white); 
 line-height: 1.4;
 }
 
@@ -299,29 +299,29 @@ background: var(--bg-main);
 
 .equipment-gallery {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
 gap: 15px;
 }
 
 .equipment-item {
-height: 150px;
+height: 150px; 
 background: var(--bg-card);
 border-radius: 8px;
-display: flex;
-align-items: center;
-justify-content: center;
+display: flex; 
+align-items: center; 
+justify-content: center; 
 box-shadow: 0 2px 8px var(--shadow-color-light);
 border: 1px solid var(--border-color);
 transition: all 0.3s ease;
-overflow: hidden;
+overflow: hidden; 
 }
 
 .equipment-item img {
 width: 100%;
 height: 100%;
-object-fit: cover;
-display: block;
-border-radius: inherit;
+object-fit: cover; 
+display: block; 
+border-radius: inherit; 
 }
 
 
@@ -580,6 +580,17 @@ transition-duration: 0.8s;
 transition-duration: 0.6s;
 }
 
+/* Footer Styles */
+.site-footer {
+background-color: var(--text-dark); /* Dark background for footer */
+color: var(--bg-main); /* Light text color */
+text-align: center;
+padding: 25px 20px; /* Vertical and horizontal padding */
+font-size: 0.9rem;
+border-top: 3px solid var(--primary-accent-color); /* Accent border top */
+margin-top: 40px; /* Space above the footer */
+}
+
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
@@ -587,7 +598,7 @@ transition-duration: 0.6s;
 .hero-sub-tagline { font-size: 1.1rem; }
 
 .stats { grid-template-columns: repeat(2, 1fr); }
-.stat-number { font-size: 2.2rem; }
+.stat-number { font-size: 2.2rem; } 
 .stat-label { font-size: 0.9rem; }
 
 .trainer-content { grid-template-columns: 1fr; text-align: center; }
@@ -605,12 +616,17 @@ h2 { font-size: 1.8rem; }
 .testimonial-text { font-size: 0.9rem; }
 .testimonial-author { font-size: 1rem; }
 
-.equipment-item { height: 120px; }
+.equipment-item { height: 120px; } 
+
+.site-footer {
+padding: 20px 15px;
+font-size: 0.85rem;
+}
 }
 
 @media (max-width: 480px) {
 .stats { grid-template-columns: 1fr; }
-.stat-number { font-size: 2rem; }
+.stat-number { font-size: 2rem; } 
 .stat-label { font-size: 0.85rem; }
 
 .hero-main-tagline { font-size: 1.9rem; }
@@ -618,8 +634,12 @@ h2 { font-size: 1.8rem; }
 h2 { font-size: 1.6rem; }
 .hours-grid { grid-template-columns: 1fr; }
 .testimonials { grid-template-columns: 1fr; }
-.equipment-gallery { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+.equipment-gallery { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); } 
 .equipment-item { height: 100px; }
+
+.site-footer {
+font-size: 0.8rem;
+}
 }
 </style>
 </head>
@@ -677,9 +697,9 @@ onerror="this.onerror=null; this.src='https://placehold.co/200x200/e0e0e0/777?te
 </a>
 </div>
 <div class="trainer-info animate-on-scroll anim-target anim-fade-in-right">
-<p>Hi, I’m Vikash Kumar. I started Lakh Amarpura Gym over 10 years ago, and I’m proud to say we’re still here, helping our community get stronger and healthier every day. We were the first gym in the area—and we’re still the go-to place for real results!
+<p>Hi, I’m Vikash Kumar. I started golden gym over 10 years ago, and I’m proud to say we’re still here, helping our community get stronger and healthier every day. We were the first gym in the area—and we’re still the go-to place for real results!
 Whether you want to get fit, lose some weight, or train for army and police exams, I’m here to guide you with honest advice and a plan that fits you. We also provide expert nutrition guidance, supplement training, and quality products to support your fitness journey.
-At our gym, you’re not just another member—you’re part of the family,come see why so many people trust lakh amarpura gym!</p>
+At our gym, you’re not just another member—you’re part of the family, come and see why so many people trust golden gym!</p>
 <ul>
 <li>Real-world training plans that get results</li>
 <li>Focus on correct form and safe exercise</li>
@@ -699,10 +719,10 @@ At our gym, you’re not just another member—you’re part of the family,come 
 <img src="https://i.ibb.co/nqhK73h7/3f94bcb1-7a55-41b2-b54e-30ede672e542.jpg" alt="Golden Gym Equipment 1" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Equipment+1';">
 </div>
 <div class="equipment-item anim-target anim-scale-in stagger-item">
-<img src="https://i.ibb.co/WvzcfdYF/IMG-20241115-060512.jpg" alt="Golden Gym Equipment 2" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Equipment+2';">
+<img src="https://i.ibb.co/DftCfgB2/0a29dee1-d6d5-409d-9049-ec42181a0100.jpg" alt="Golden Gym Equipment 2" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Equipment+2';">
 </div>
 <div class="equipment-item anim-target anim-scale-in stagger-item">
-<img src="https://i.ibb.co/whYBtR2L/99418bd3-c0bc-4440-946a-defd5dcb3228.jpg" alt="Golden Gym Equipment 3" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Equipment+3';">
+<img src="https://i.ibb.co/WvzcfdYF/IMG-20241115-060512.jpg." alt="Golden Gym Equipment 3" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Equipment+3';">
 </div>
 <div class="equipment-item anim-target anim-scale-in stagger-item">
 <img src="https://i.ibb.co/PzWtG3hM/4b4538b0-8cda-4642-b389-5d532aea7cf4.jpg" alt="Golden Gym Equipment 4" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Equipment+4';">
@@ -838,6 +858,12 @@ title="Golden Gym Location Map">
 </div>
 </section>
 
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; 2025 Naubatpur Lakh Golden Gym, All rights reserved.</p>
+    </div>
+</footer>
+
 <script>
 // Enhanced JavaScript with error handling and performance improvements
 
@@ -897,7 +923,7 @@ el.classList.add('is-visible');
 const scrollAnimatedElements = document.querySelectorAll('.animate-on-scroll');
 
 // Function to animate counting numbers using requestAnimationFrame
-function animateCountUp(element, target, suffix = '', duration = 2000) {
+function animateCountUp(element, target, suffix = '', duration = 4000) {
 if (element.dataset.animated === 'true') return;
 element.dataset.animated = 'true';
 
@@ -1024,16 +1050,16 @@ animateCountUp(statNumberEl, target, suffix);
 // Fallback for .stats container in hero if IntersectionObserver is not supported
 const statsContainerFallback = document.querySelector('.hero .stats');
 if (statsContainerFallback) {
-// Make stat items visible
-statsContainerFallback.querySelectorAll('.stat-item.anim-target').forEach(item => item.classList.add('is-visible'));
-// Animate numbers
-statsContainerFallback.querySelectorAll('.stat-item .stat-number').forEach(statEl => {
-if (statEl.dataset.target) {
-const target = parseInt(statEl.dataset.target, 10);
-const suffix = statEl.dataset.suffix || '';
-animateCountUp(statEl, target, suffix);
-}
-});
+    // Make stat items visible
+    statsContainerFallback.querySelectorAll('.stat-item.anim-target').forEach(item => item.classList.add('is-visible'));
+    // Animate numbers
+    statsContainerFallback.querySelectorAll('.stat-item .stat-number').forEach(statEl => {
+        if (statEl.dataset.target) {
+            const target = parseInt(statEl.dataset.target, 10);
+            const suffix = statEl.dataset.suffix || '';
+            animateCountUp(statEl, target, suffix);
+        }
+    });
 }
 }
 });
