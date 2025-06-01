@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;600;700&family=Roboto+Slab:wght@700&family=Merriweather:wght@300;700&display=swap" as="style">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;600;700&family=Roboto+Slab:wght@700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
 :root {
@@ -24,11 +25,9 @@
 --border-color: #d6ccc2;
 --sky-blue: #87CEEB; /* Sky blue for ladies' section */
 --white: #ffffff;
---black-transparent-hero: rgba(0,0,0,0.65);
+--black-transparent-hero: rgba(0,0,0,0.65); /* Overlay opacity */
 --shadow-color-light: rgba(45, 36, 36, 0.1);
 --shadow-color-medium: rgba(45, 36, 36, 0.15);
-
-/* Colors for stats from image */
 --stat-number-color: #D97746;
 }
 
@@ -36,6 +35,9 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box;
+/* Ensure text breaks within containers on all devices */
+word-wrap: break-word;
+overflow-wrap: break-word;
 }
 
 body {
@@ -43,10 +45,9 @@ font-family: 'Lato', sans-serif;
 line-height: 1.6;
 color: var(--text-light);
 background-color: var(--bg-main);
-overflow-x: hidden; /* Prevent horizontal scrollbars from animations */
+overflow-x: hidden;
 }
 
-/* Loading spinner */
 .loading-spinner {
 position: fixed;
 top: 0;
@@ -76,7 +77,7 @@ animation: spin 1s linear infinite;
 }
 
 .container {
-max-width: 1200px;
+max-width: 1200px; /* Optimal width for desktop readability */
 margin: 0 auto;
 padding: 0 20px;
 }
@@ -89,7 +90,6 @@ padding: 60px 0;
 border-top: 3px solid var(--border-color);
 }
 
-/* Section Subheadings (e.g., "WHEN WE'RE OPEN") */
 .section-sub-title {
 text-align: center;
 font-family: 'Lato', sans-serif;
@@ -98,7 +98,7 @@ font-weight: 600;
 color: var(--primary-accent-color);
 text-transform: uppercase;
 letter-spacing: 1px;
-margin-bottom: 0.5rem; /* Space between sub-title and main H2 */
+margin-bottom: 0.5rem;
 }
 
 h1, h2, h3 {
@@ -107,10 +107,9 @@ color: var(--text-dark);
 font-weight: 700;
 }
 
-/* Hero Section Text Styling */
 .hero-main-tagline {
 font-family: 'Playfair Display', serif;
-font-size: 2.8rem; /* Prominent size */
+font-size: 2.8rem;
 font-weight: 700;
 color: var(--white);
 line-height: 1.3;
@@ -172,7 +171,7 @@ font-size: 1.1rem;
 }
 
 .btn:hover {
-background: #7f0e2a; /* Darken of primary accent */
+background: #7f0e2a;
 transform: translateY(-2px);
 }
 
@@ -181,13 +180,14 @@ outline: 2px solid var(--primary-accent-color);
 outline-offset: 2px;
 }
 
-/* Hero Section */
+/* Hero Section Updated with actual logo URL */
 .hero {
-background: linear-gradient(var(--black-transparent-hero), var(--black-transparent-hero)),
-url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
+background:
+linear-gradient(var(--black-transparent-hero), var(--black-transparent-hero)), /* Transparent overlay for text contrast */
+url('https://i.ibb.co/3ygtmP0m/Ronnie-Coleman.jpg') center center / cover no-repeat, /* Changed to cover */
+#1a1a1a; /* Dark fallback background color */
+
+background-attachment: fixed; /* Keeps the background fixed during scroll */
 color: var(--white);
 text-align: center;
 padding: 100px 0;
@@ -196,9 +196,9 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+position: relative;
 }
 
-/* Stats Section - UPDATED STYLES */
 .stats {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -208,31 +208,28 @@ margin: 40px 0 0;
 
 .stat-item {
 text-align: center;
-background: rgba(255,255,255,0.1);
+background: rgba(255,255,255,0.1); /* Slight background for stat items themselves for better separation */
 padding: 20px;
 border-radius: 8px;
 }
 
-/* Updated .stat-number to use Merriweather font with weight 700 */
 .stat-number {
-font-family: 'Merriweather', serif; 
-font-size: 2.5rem; 
-font-weight: 700; /* Updated font weight */
-color: var(--stat-number-color); 
+font-family: 'Merriweather', serif;
+font-size: 2.5rem;
+font-weight: 700;
+color: var(--stat-number-color);
 display: block;
-margin-bottom: 0.25rem; 
+margin-bottom: 0.25rem;
 }
 
 .stat-label {
-font-family: 'Lato', sans-serif; 
-font-size: 1rem; 
+font-family: 'Lato', sans-serif;
+font-size: 1rem;
 font-weight: 400;
-color: var(--white); 
+color: var(--white);
 line-height: 1.4;
 }
 
-
-/* Trainer Section */
 .trainer-section {
 background: var(--bg-card);
 }
@@ -292,36 +289,35 @@ color: var(--primary-accent-color);
 font-weight: bold;
 }
 
-/* Equipment Section */
 .equipment-section {
 background: var(--bg-main);
 }
 
 .equipment-gallery {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 gap: 15px;
 }
 
 .equipment-item {
-height: 150px; 
+height: 150px;
 background: var(--bg-card);
 border-radius: 8px;
-display: flex; 
-align-items: center; 
-justify-content: center; 
+display: flex;
+align-items: center;
+justify-content: center;
 box-shadow: 0 2px 8px var(--shadow-color-light);
 border: 1px solid var(--border-color);
 transition: all 0.3s ease;
-overflow: hidden; 
+overflow: hidden;
 }
 
 .equipment-item img {
 width: 100%;
 height: 100%;
-object-fit: cover; 
-display: block; 
-border-radius: inherit; 
+object-fit: cover;
+display: block;
+border-radius: inherit;
 }
 
 
@@ -330,7 +326,6 @@ transform: translateY(-2px);
 box-shadow: 0 4px 12px var(--shadow-color-medium);
 }
 
-/* Nutrition Section */
 .nutrition-section {
 background: var(--bg-card);
 }
@@ -354,7 +349,6 @@ color: var(--primary-accent-color);
 margin-bottom: 10px;
 }
 
-/* Hours Section - Updated Styles */
 .hours-section {
 background: var(--bg-main);
 }
@@ -414,8 +408,6 @@ color: var(--primary-accent-color);
 color: var(--sky-blue);
 }
 
-
-/* Testimonials Section - Updated Styles */
 .testimonials-section {
 background: var(--bg-main);
 }
@@ -424,14 +416,24 @@ background: var(--bg-main);
 margin-bottom: 1.5rem;
 }
 
-.testimonials {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 30px;
+/* Testimonials Slider Styles */
+.testimonials-slider {
+position: relative;
+overflow: hidden; /* Hide extra testimonials */
 margin-top: 20px;
+padding-bottom: 50px; /* Space for pagination dots */
+}
+
+.slider-track {
+display: flex;
+transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
+will-change: transform; /* Performance hint for smoother animations */
+gap: 30px; /* Space between each testimonial item */
 }
 
 .testimonial {
+flex: 0 0 100%; /* Each testimonial takes full width of the visible area */
+max-width: 100%; /* Ensure it doesn't exceed parent width */
 background: var(--bg-card);
 padding: 30px;
 border-radius: 12px;
@@ -441,7 +443,9 @@ flex-direction: column;
 align-items: center;
 text-align: center;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
+box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
+
 .testimonial:hover {
 transform: translateY(-5px);
 box-shadow: 0 8px 20px var(--shadow-color-medium);
@@ -495,14 +499,80 @@ color: var(--text-light);
 margin-top: 0.2rem;
 }
 
+.slider-nav {
+position: absolute;
+top: 50%;
+width: 100%;
+display: flex;
+justify-content: space-between;
+transform: translateY(-50%);
+padding: 0 10px; /* Keep padding for positioning */
+z-index: 10;
+pointer-events: none; /* Allow clicks to pass through to actual buttons */
+}
 
-/* Membership Section */
+.slider-nav button {
+background: transparent; /* Make background transparent */
+color: var(--white); /* White arrow */
+border: none; /* Remove border */
+border-radius: 0; /* Remove border-radius */
+width: auto; /* Allow width to be determined by content */
+height: auto; /* Allow height to be determined by content */
+padding: 10px; /* Add some padding for easier clicking without changing shape */
+font-size: 2.5rem; /* Make arrow larger for visibility */
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: none; /* Remove shadow */
+transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease; /* Transition for color, transform, and opacity */
+pointer-events: all; /* Make buttons clickable */
+opacity: 0.3; /* Made arrows semi-transparent */
+}
+
+.slider-nav button:hover {
+background-color: transparent; /* Keep background transparent on hover */
+transform: scale(1.1);
+opacity: 1; /* Full opacity on hover */
+color: var(--primary-accent-color); /* Optional: Change color on hover for more feedback */
+}
+
+.slider-nav button:disabled {
+background-color: transparent; /* Keep background transparent when disabled */
+cursor: not-allowed;
+opacity: 0.1; /* Even more transparent when disabled */
+color: var(--white); /* Keep white when disabled */
+}
+
+.slider-pagination {
+display: flex;
+justify-content: center;
+position: absolute;
+bottom: 15px;
+width: 100%;
+}
+
+.pagination-dot {
+width: 10px;
+height: 10px;
+background-color: var(--border-color);
+border-radius: 50%;
+margin: 0 5px;
+cursor: pointer;
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pagination-dot.active {
+background-color: var(--primary-accent-color);
+transform: scale(1.2);
+}
+
+
 .membership-section {
 background: var(--bg-main);
 text-align: center;
 }
 
-/* Contact Section */
 .contact-section {
 background: var(--bg-card);
 }
@@ -524,17 +594,39 @@ margin-bottom: 10px;
 margin-bottom: 15px;
 }
 
+/* Style for icons */
+.contact-info .fa-whatsapp,
+.membership-section .fa-whatsapp {
+margin-right: 8px; /* Space between icon and text */
+color: #25D366; /* WhatsApp green */
+}
+
+.contact-info .fa-map-marker-alt {
+margin-right: 8px; /* Space between icon and text */
+color: var(--primary-accent-color); /* Match accent color */
+}
+
+
 .map-container {
 border-radius: 8px;
 overflow: hidden;
 box-shadow: 0 4px 12px var(--shadow-color-medium);
 height: 350px;
+/* Add a subtle hover effect to indicate clickability */
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+cursor: pointer; /* Indicate it's clickable */
+}
+
+.map-container:hover {
+transform: translateY(-3px);
+box-shadow: 0 6px 18px var(--shadow-color-medium);
 }
 
 .map-container iframe {
 width: 100%;
 height: 100%;
 border: 0;
+pointer-events: none; /* Allow clicks to pass through to the wrapping <a> tag */
 }
 
 
@@ -550,8 +642,6 @@ white-space: nowrap;
 border: 0;
 }
 
-
-/* Animation Styles */
 .anim-target {
 opacity: 0;
 transition-property: opacity, transform;
@@ -570,7 +660,6 @@ opacity: 1;
 transform: translateY(0) scale(1) translateX(0);
 }
 
-/* Individual element animation tweaks if needed */
 .hero .hero-main-tagline.anim-target,
 .hero .hero-sub-tagline.anim-target,
 .hero .btn.anim-target {
@@ -580,25 +669,68 @@ transition-duration: 0.8s;
 transition-duration: 0.6s;
 }
 
-/* Footer Styles */
 .site-footer {
-background-color: var(--text-dark); /* Dark background for footer */
-color: var(--bg-main); /* Light text color */
+background-color: var(--text-dark);
+color: var(--bg-main);
 text-align: center;
-padding: 25px 20px; /* Vertical and horizontal padding */
+padding: 25px 20px;
 font-size: 0.9rem;
-border-top: 3px solid var(--primary-accent-color); /* Accent border top */
-margin-top: 40px; /* Space above the footer */
+border-top: 3px solid var(--primary-accent-color);
+margin-top: 40px;
+}
+
+/* Media query for larger desktops (e.g., > 1024px) to ensure optimal spacing */
+@media (min-width: 1025px) {
+.container {
+padding: 0 40px; /* Increase horizontal padding for more breathing room */
+}
+
+h2 {
+font-size: 2.5rem; /* Slightly larger headings for desktop impact */
+}
+
+.hero-main-tagline {
+font-size: 3.5rem; /* Larger hero text */
+}
+
+.hero-sub-tagline {
+font-size: 1.5rem; /* Larger sub-tagline */
+}
+
+.trainer-content {
+/* Adjust grid columns for trainer section on larger screens if needed */
+grid-template-columns: 250px 1fr; /* Give trainer photo more fixed space */
+gap: 50px; /* Increase gap for better separation */
+}
+
+.nutrition-points,
+.hours-grid {
+/* Ensure these grids can comfortably fit 4 columns on very wide screens if desired,
+or maintain current 2-3 column layout with more space */
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider min for items */
+gap: 30px; /* More space between items */
+}
+
+.contact-grid {
+gap: 60px; /* Increased gap for contact section */
+}
+
+.testimonial {
+padding: 40px; /* More padding inside testimonials */
+}
+
+.testimonial-text {
+font-size: 1rem; /* Slightly larger testimonial text for readability */
+}
 }
 
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
 .hero-main-tagline { font-size: 2.2rem; }
 .hero-sub-tagline { font-size: 1.1rem; }
 
 .stats { grid-template-columns: repeat(2, 1fr); }
-.stat-number { font-size: 2.2rem; } 
+.stat-number { font-size: 2.2rem; }
 .stat-label { font-size: 0.9rem; }
 
 .trainer-content { grid-template-columns: 1fr; text-align: center; }
@@ -616,25 +748,31 @@ h2 { font-size: 1.8rem; }
 .testimonial-text { font-size: 0.9rem; }
 .testimonial-author { font-size: 1rem; }
 
-.equipment-item { height: 120px; } 
+.equipment-item { height: 120px; }
 
 .site-footer {
 padding: 20px 15px;
 font-size: 0.85rem;
 }
+
+/* Removed background-attachment: scroll; to enable parallax on smaller screens as well.
+If you want to disable parallax on mobile for performance, uncomment the line below. */
+/* .hero {
+background-attachment: scroll;
+} */
 }
 
 @media (max-width: 480px) {
 .stats { grid-template-columns: 1fr; }
-.stat-number { font-size: 2rem; } 
+.stat-number { font-size: 2rem; }
 .stat-label { font-size: 0.85rem; }
 
 .hero-main-tagline { font-size: 1.9rem; }
 .hero-sub-tagline { font-size: 1rem; }
 h2 { font-size: 1.6rem; }
 .hours-grid { grid-template-columns: 1fr; }
-.testimonials { grid-template-columns: 1fr; }
-.equipment-gallery { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); } 
+/* Testimonials will remain 1fr, but the slider handles the horizontal movement */
+.equipment-gallery { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
 .equipment-item { height: 100px; }
 
 .site-footer {
@@ -672,10 +810,6 @@ get up and get after it.
 <span class="stat-label">Modern equipment</span>
 </div>
 <div class="stat-item anim-target anim-fade-in-up stagger-item">
-<span class="stat-number" data-target="37" data-suffix="+">0+</span>
-<span class="stat-label">Qualified in physical exams</span>
-</div>
-<div class="stat-item anim-target anim-fade-in-up stagger-item">
 <span class="stat-number" data-target="11" data-suffix="+">0+</span>
 <span class="stat-label">Years in business</span>
 </div>
@@ -688,7 +822,7 @@ get up and get after it.
 <h2 class="animate-on-scroll anim-target anim-fade-in-down">Meet Vikash Kumar: Your Expert Guide to Fitness Success</h2>
 <div class="trainer-content">
 <div class="trainer-photo animate-on-scroll anim-target anim-scale-in">
-<a href="https://ibb.co/99xTwM84" target="_blank">
+<a href="https://ibb.co/99xTwM84" target="_blank" rel="noopener noreferrer">
 <img
 src="https://i.ibb.co/zh3R8kn2/swap-2025-05-27-12-39-55.jpg"
 alt="Vikash Kumar, expert trainer at Golden Gym"
@@ -699,7 +833,7 @@ onerror="this.onerror=null; this.src='https://placehold.co/200x200/e0e0e0/777?te
 <div class="trainer-info animate-on-scroll anim-target anim-fade-in-right">
 <p>Hi, I’m Vikash Kumar. I started golden gym over 10 years ago, and I’m proud to say we’re still here, helping our community get stronger and healthier every day. We were the first gym in the area—and we’re still the go-to place for real results!
 Whether you want to get fit, lose some weight, or train for army and police exams, I’m here to guide you with honest advice and a plan that fits you. We also provide expert nutrition guidance, supplement training, and quality products to support your fitness journey.
-At our gym, you’re not just another member—you’re part of the family, come and see why so many people trust golden gym!</p>
+At our gym, you’s not just another member—you’re part of the family, come and see why so many people trust golden gym!</p>
 <ul>
 <li>Real-world training plans that get results</li>
 <li>Focus on correct form and safe exercise</li>
@@ -713,25 +847,31 @@ At our gym, you’re not just another member—you’re part of the family, come
 
 <section class="equipment-section section-divider">
 <div class="container">
-<h2 class="animate-on-scroll anim-target anim-fade-in-down">Our Equipment</h2>
+<h2 class="animate-on-scroll anim-target anim-fade-in-down"> A Quick Glance Inside the Gym </h2>
 <div class="equipment-gallery animate-on-scroll stagger-container" style="margin-top: 40px;">
-<div class="equipment-item anim-target anim-scale-in stagger-item">
-<img src="https://i.ibb.co/nqhK73h7/3f94bcb1-7a55-41b2-b54e-30ede672e542.jpg" alt="Golden Gym Equipment 1" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Equipment+1';">
+<div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0s;">
+<img src="https://i.ibb.co/0NPPDPs/Picsart-25-06-01-16-40-18-880.jpg" alt="Golden Gym Equipment 1" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+1';">
 </div>
-<div class="equipment-item anim-target anim-scale-in stagger-item">
-<img src="https://i.ibb.co/DftCfgB2/0a29dee1-d6d5-409d-9049-ec42181a0100.jpg" alt="Golden Gym Equipment 2" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Equipment+2';">
+<div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0.1s;">
+<img src="https://i.ibb.co/zW1DSwcR/IMG-20250601-WA0075.jpg" alt="Golden Gym Equipment 2" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+2';">
 </div>
-<div class="equipment-item anim-target anim-scale-in stagger-item">
-<img src="https://i.ibb.co/WvzcfdYF/IMG-20241115-060512.jpg." alt="Golden Gym Equipment 3" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Equipment+3';">
+<div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0.2s;">
+<img src="https://i.ibb.co/hxYg8s1b/IMG-20250601-163510.jpg" alt="Golden Gym Equipment 3" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+3';">
 </div>
-<div class="equipment-item anim-target anim-scale-in stagger-item">
-<img src="https://i.ibb.co/PzWtG3hM/4b4538b0-8cda-4642-b389-5d532aea7cf4.jpg" alt="Golden Gym Equipment 4" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Equipment+4';">
+<div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0.3s;">
+<img src="https://i.ibb.co/fVfS5xf3/IMG-20250601-WA0071.jpg" alt="Golden Gym Equipment 4" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+4';">
 </div>
-<div class="equipment-item anim-target anim-scale-in stagger-item">
-<img src="https://i.ibb.co/LDcnwRvv/4d8eb9aa-4e40-440b-9061-b3d8917f87ef.jpg" alt="Golden Gym Equipment 5" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Equipment+5';">
+<div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0.4s;">
+<img src="https://i.ibb.co/bMhtJ3W4/20250601-062434-Leo2-0-Moto-G54.jpg" alt="Golden Gym Equipment 5" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+5';">
 </div>
-<div class="equipment-item anim-target anim-scale-in stagger-item">
-<img src="https://i.ibb.co/twnGSbHd/e067ad4b-15d9-4a14-a6ab-9fdca7c73688.jpg" alt="Golden Gym Equipment 6" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Equipment+6';">
+<div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0.5s;">
+<img src="https://i.ibb.co/7NJcGLDm/IMG-20250601-161844.jpg" alt="Golden Gym Equipment 6" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+6';">
+</div>
+<div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0.6s;">
+<img src="https://i.ibb.co/C3Rnk9mH/Picsart-25-06-01-16-45-28-236.jpg" alt="Golden Gym Equipment 7" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+7';">
+</div>
+<div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0.7s;">
+<img src="https://i.ibb.co/r2hQznt5/20250601-063127-Leo2-0-Moto-G54.jpg" alt="Golden Gym Equipment 8" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+8';">
 </div>
 </div>
 </div>
@@ -790,10 +930,12 @@ At our gym, you’re not just another member—you’re part of the family, come
 
 <section class="testimonials-section section-divider">
 <div class="container">
-<p class="section-sub-title animate-on-scroll anim-target anim-fade-in-down">REAL RESULTS</p>
-<h2 class="animate-on-scroll anim-target anim-fade-in-down">Success Stories</h2>
-<div class="testimonials animate-on-scroll stagger-container">
-<div class="testimonial anim-target anim-fade-in-left stagger-item">
+<p class="section-sub-title animate-on-scroll anim-target anim-fade-in-down">Few Results</p>
+<h2 class="animate-on-scroll anim-target anim-fade-in-down">Stories From Our Members</h2>
+
+<div class="testimonials-slider animate-on-scroll anim-target anim-scale-in">
+<div class="slider-track">
+<div class="testimonial">
 <div class="testimonial-initials">RK</div>
 <div class="testimonial-stars">
 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
@@ -801,7 +943,7 @@ At our gym, you’re not just another member—you’re part of the family, come
 <p class="testimonial-text">"At 85 kg, I struggled with fitness and doubted if I could ever clear the Bihar Police exam. Determined to change, I began training seriously under Vikash sir’s guidance. The supportive atmosphere and structured routines kept me on track. Over eight months, I shed 20 kg, built strength, and gained immense confidence. Achieving my goal of passing the physical test was a proud moment, proving that dedication and the right mentorship can truly transform your life."</p>
 <p class="testimonial-author">Ritwik Kumar <span>Bihar Police</span></p>
 </div>
-<div class="testimonial anim-target anim-fade-in-right stagger-item" style="transition-delay: 0.15s;">
+<div class="testimonial">
 <div class="testimonial-initials">AS</div>
 <div class="testimonial-stars">
 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
@@ -809,7 +951,56 @@ At our gym, you’re not just another member—you’re part of the family, come
 <p class="testimonial-text">"Facing low self-esteem and extra weight, I knew I needed a change to pursue my dream of joining the Indian Army. With Vikash sir’s motivation and a focused workout plan, I gradually lost 13 kg and improved my endurance. The encouragement from fellow members and the disciplined environment kept me going. After months of hard work, I finally cleared the army recruitment, feeling healthier and more confident than ever before. "</p>
 <p class="testimonial-author">Amit Singh <span>Indian Army Soldier</span></p>
 </div>
+<div class="testimonial">
+<div class="testimonial-initials">AM</div>
+<div class="testimonial-stars">
+<span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
 </div>
+<p class="testimonial-text">"When I first stepped into Golden Gym, I was purely focused on physical transformation, with very little understanding of nutrition. Vikash sir's guidance on workouts was exceptional, but it was his holistic approach and insights into diet and supplementation that truly opened my eyes. My fitness journey here didn't just transform my body; it ignited a passion for nutrition that led me to become a professional nutritionist myself. This gym is more than just a place to lift weights; it's a place where life transformations begin."</p>
+<p class="testimonial-author">Arvik Mishra <span>Professional Nutritionist</span></p>
+</div>
+</div>
+<div class="slider-nav">
+<button id="prevSlide" aria-label="Previous Testimonial">❮</button>
+<button id="nextSlide" aria-label="Next Testimonial">❯</button>
+</div>
+<div class="slider-pagination" id="sliderPagination"></div>
+</div>
+
+</div>
+</section>
+
+<section class="hindi-services-section section-divider">
+<div class="container">
+<p class="section-sub-title animate-on-scroll anim-target anim-fade-in-down">हमारी सेवाएँ</p>
+<h2 class="animate-on-scroll anim-target anim-fade-in-down">विकास कुमार के साथ</h2>
+<p class="animate-on-scroll anim-target anim-fade-in-up" style="margin-bottom: 1.5rem;">
+नमस्ते! मैं विकास, करीब 10 साल पहले जब मैंने इस जिम की शुरुआत की थी, तब आसपास के इलाके में फिटनेस के लिए कोई अच्छा विकल्प नहीं था। आज गर्व से कह सकता हूँ कि हमारे जिम का नाम हर किसी की जुबान पर है— आप किसी से भी पूछ सकते हैं! यहाँ सिर्फ वर्कआउट ही नहीं, बल्कि पोषण, डाइट और सप्लीमेंटेशन से जुड़ी पूरी जानकारी और पर्सनल गाइडेंस भी दी जाती है ताकि आपकी फिटनेस जर्नी हर तरह से सही दिशा में आगे बढ़े। हमारा माहौल इतना दोस्ताना और अपनापन भरा है कि आपको हमेशा एक परिवार जैसा एहसास होगा। अब तक हमने न जाने कितने लोगों को न केवल उनकी सेहत बेहतर करने में, बल्कि फिजिकल एग्जाम पास करने में भी मदद की है। लेकिन हमारे लिए जिम सिर्फ फिटनेस तक सीमित नहीं है—यहाँ हम एक परिवार की तरह एक-दूसरे का साथ देते हैं और ज़िंदगी को बेहतर बनाने की कोशिश करते हैं।
+</p>
+<p class="animate-on-scroll anim-target anim-fade-in-up" style="margin-bottom: 1.5rem;">
+मेरे साथ प्रशिक्षण के दौरान, आप हर दिन व्यक्तिगत मार्गदर्शन और एक सहायक वातावरण की उम्मीद कर सकते हैं। हमारा ध्यान केवल शारीरिक परीक्षा पास करने या वजन कम करने पर नहीं है, बल्कि आपके पूरे जीवन को बदलने पर है।
+</p>
+<div class="nutrition-points animate-on-scroll stagger-container" style="margin-top: 30px;">
+<div class="nutrition-point anim-target anim-fade-in-up stagger-item">
+<h4>व्यक्तिगत प्रशिक्षण योजनाएँ</h4>
+<p>हम आपको वास्तविक दुनिया की प्रशिक्षण योजनाएँ प्रदान करते हैं जो परिणाम देती हैं, चाहे आप फिट होना चाहते हों, वजन कम करना चाहते हों, या सेना और पुलिस परीक्षाओं के लिए तैयारी कर रहे हों।</p>
+</div>
+<div class="nutrition-point anim-target anim-fade-in-up stagger-item">
+<h4>सही फॉर्म और सुरक्षित व्यायाम</h4>
+<p>हम सही फॉर्म और सुरक्षित व्यायाम पर विशेष ध्यान देते हैं ताकि आप चोटों से बच सकें और अधिकतम लाभ प्राप्त कर सकें।</p>
+</div>
+<div class="nutrition-point anim-target anim-fade-in-up stagger-item">
+<h4>पोषण और पूरक मार्गदर्शन</h4>
+<p>हम आपको विशेषज्ञ पोषण संबंधी मार्गदर्शन, पूरक प्रशिक्षण, और गुणवत्तापूर्ण उत्पाद प्रदान करते हैं ताकि आपकी फिटनेस यात्रा को सहारा मिल सके।</p>
+</div>
+<div class="nutrition-point anim-target anim-fade-in-up stagger-item">
+<h4>प्रेरणा और समर्थन</h4>
+<p>हमारे सदस्य हमारे परिवार का हिस्सा हैं। आपको लगातार प्रेरणा और समर्थन मिलेगा, जैसा कि हमारे सफल सदस्यों (जैसे ऋत्विक कुमार और अमित सिंह) ने अनुभव किया है, जिन्होंने हमारे साथ अपने लक्ष्यों को प्राप्त किया है।</p>
+</div>
+</div>
+<p class="animate-on-scroll anim-target anim-fade-in-up" style="margin-top: 2rem;">
+गोल्डन जिम में, आप सिर्फ एक और सदस्य नहीं हैं — आप परिवार का हिस्सा हैं। आइए और देखिए क्यों इतने सारे लोग गोल्डन जिम पर भरोसा करते हैं!
+</p>
 </div>
 </section>
 
@@ -817,7 +1008,7 @@ At our gym, you’re not just another member—you’re part of the family, come
 <div class="container">
 <h2 class="animate-on-scroll anim-target anim-fade-in-down">Membership Options</h2>
 <p class="animate-on-scroll anim-target anim-fade-in-up" style="font-size: 1.2rem; margin-bottom: 2rem;">Ready to start your fitness journey? We offer flexible membership plans designed to fit your needs and budget.</p>
-<p class="animate-on-scroll anim-target anim-fade-in-up" style="margin-bottom: 2rem;"><strong>For membership details, please contact us at <span class="accent">+91 75428 01770</span>.</strong></p>
+<p class="animate-on-scroll anim-target anim-fade-in-up" style="margin-bottom: 2rem;"><strong>For membership details, please contact us at <span class="accent"><i class="fab fa-whatsapp"></i> +91 75428 01770</span>.</strong></p>
 <a href="tel:+917542801770" class="btn animate-on-scroll anim-target anim-scale-in" aria-label="Call Golden Gym for membership details">Call Now for Membership</a>
 </div>
 </section>
@@ -827,41 +1018,43 @@ At our gym, you’re not just another member—you’re part of the family, come
 <h2 class="animate-on-scroll anim-target anim-fade-in-down">Contact Us</h2>
 <div class="contact-grid animate-on-scroll anim-target anim-scale-in">
 <div class="contact-info">
-<h4>Address</h4>
+<h4><i class="fas fa-map-marker-alt"></i> Address</h4>
 <p> Naubatpur lakh Inside of amarpura gate,<br> Patna Bihar 801109, India</p>
 
 <h4>Phone</h4>
-<p><a href="tel:+917542801770" style="color: var(--primary-accent-color); text-decoration: none;" aria-label="Call Golden Gym">+91 75428 01770</a></p>
+<p><a href="tel:+917542801770" style="color: var(--primary-accent-color); text-decoration: none;" aria-label="Call Golden Gym"><i class="fab fa-whatsapp"></i> +91 75428 01770</a></p>
 
 <h4>Location</h4>
 <p>
-<a href="https://www.google.com/maps/search/?api=1&query=FXG4%2BH58%2C+Amarpura%2C+Kopa+Khurd%2C+Bihar+801109" target="_blank" rel="noopener" style="color: var(--primary-accent-color); text-decoration: none;" aria-label="View Golden Gym location on Google Maps">View on Google Maps</a>
+<a href="https://www.google.com/maps/search/?api=1&query=Golden+Gym,+Amarpura,+Kopa+Khurd,+Bihar+801109" target="_blank" rel="noopener noreferrer" style="color: var(--primary-accent-color); text-decoration: none;" aria-label="View Golden Gym location on Google Maps">View on Google Maps</a>
 </p>
-<a href="https://www.google.com/maps/dir/?api=1&destination=FXG4%2BH58%2C+Amarpura%2C+Kopa+Khurd%2C+Bihar+801109"
+<a href="https://www.google.com/maps/search/?api=1&query=Golden+Gym,+Amarpura,+Kopa+Khurd,+Bihar+801109"
 target="_blank"
-rel="noopener"
+rel="noopener noreferrer"
 class="btn"
 style="margin-top: 15px; background-color: var(--text-dark); color: var(--white);">
 🌏 Get Directions
 </a>
 </div>
+<a href="https://www.google.com/maps/search/?api=1&query=Golden+Gym,+Amarpura,+Kopa+Khurd,+Bihar+801109" target="_blank" rel="noopener noreferrer" class="map-link">
 <div class="map-container">
 <iframe
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.780090440674!2d84.95575061501496!3d25.44566698378101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d5f0f0f0f0f0f%3A0x0!2sFXG4%2BH58%2C%20Amarpura%2C%20Kopa%20Khurd%2C%20Bihar%20801109!5e0!3m2!1sen!2sin!4v1685343000000!5m2!1sen!2sin"
+src="https://www.google.com/maps/embed?q=Golden+Gym,+Amarpura,+Kopa+Khurd,+Bihar+801109"
 allowfullscreen=""
 loading="lazy"
 referrerpolicy="no-referrer-when-downgrade"
 title="Golden Gym Location Map">
 </iframe>
 </div>
+</a>
 </div>
 </div>
 </section>
 
 <footer class="site-footer">
-    <div class="container">
-        <p>&copy; 2025 Naubatpur Lakh Golden Gym, All rights reserved.</p>
-    </div>
+<div class="container">
+<p>© 2025 Naubatpur Lakh Golden Gym, All rights reserved.</p>
+</div>
 </footer>
 
 <script>
@@ -1050,18 +1243,142 @@ animateCountUp(statNumberEl, target, suffix);
 // Fallback for .stats container in hero if IntersectionObserver is not supported
 const statsContainerFallback = document.querySelector('.hero .stats');
 if (statsContainerFallback) {
-    // Make stat items visible
-    statsContainerFallback.querySelectorAll('.stat-item.anim-target').forEach(item => item.classList.add('is-visible'));
-    // Animate numbers
-    statsContainerFallback.querySelectorAll('.stat-item .stat-number').forEach(statEl => {
-        if (statEl.dataset.target) {
-            const target = parseInt(statEl.dataset.target, 10);
-            const suffix = statEl.dataset.suffix || '';
-            animateCountUp(statEl, target, suffix);
-        }
-    });
+// Make stat items visible
+statsContainerFallback.querySelectorAll('.stat-item.anim-target').forEach(item => item.classList.add('is-visible'));
+// Animate numbers
+statsContainerFallback.querySelectorAll('.stat-item .stat-number').forEach(statEl => {
+if (statEl.dataset.target) {
+const target = parseInt(statEl.dataset.target, 10);
+const suffix = statEl.dataset.suffix || '';
+animateCountUp(statEl, target, suffix);
+}
+});
 }
 }
+
+// Testimonials Slider Logic
+const sliderContainer = document.querySelector('.testimonials-slider'); // The visible window for the slider
+const sliderTrack = document.querySelector('.testimonials-slider .slider-track');
+const prevBtn = document.getElementById('prevSlide');
+const nextBtn = document.getElementById('nextSlide');
+const paginationContainer = document.getElementById('sliderPagination'); // Re-enabled pagination container
+const testimonials = Array.from(sliderTrack.children);
+let currentIndex = 0;
+
+// Function to update the slider's position
+function updateSlider() {
+// Get the actual width of a single testimonial, including its own padding/border
+// This assumes all testimonials have the same width, which they should with flex: 0 0 100%;
+const testimonialWidth = testimonials[0].offsetWidth;
+
+// Get the computed style for the gap from the slider-track
+const computedStyle = getComputedStyle(sliderTrack);
+const gap = parseInt(computedStyle.gap) || 0;
+
+// Calculate the total distance to translate for each slide: testimonial width + gap
+const slideStep = testimonialWidth + gap;
+
+// Calculate the translation value in pixels
+const translateXValue = -currentIndex * slideStep;
+sliderTrack.style.transform = `translateX(${translateXValue}px)`;
+
+updatePaginationDots(); // Re-enabled call to update dots
+updateNavigationButtons();
+}
+
+// Function to create and update pagination dots (Re-enabled)
+function updatePaginationDots() {
+paginationContainer.innerHTML = ''; // Clear existing dots
+testimonials.forEach((_, index) => {
+const dot = document.createElement('span');
+dot.classList.add('pagination-dot');
+if (index === currentIndex) {
+dot.classList.add('active');
+}
+dot.addEventListener('click', () => {
+currentIndex = index;
+updateSlider();
+});
+paginationContainer.appendChild(dot);
+});
+}
+
+
+// Function to enable/disable navigation buttons
+function updateNavigationButtons() {
+prevBtn.disabled = currentIndex === 0;
+nextBtn.disabled = currentIndex === testimonials.length - 1;
+}
+
+// Event Listeners for Navigation Buttons
+prevBtn.addEventListener('click', () => {
+if (currentIndex > 0) {
+currentIndex--;
+updateSlider();
+}
+});
+
+nextBtn.addEventListener('click', () => {
+if (currentIndex < testimonials.length - 1) {
+currentIndex++;
+updateSlider();
+}
+});
+
+// Initialize slider on DOMContentLoaded
+updateSlider(); // Call once to set initial state and create dots
+
+// Add a resize listener to update slider position if window resizes
+// This is crucial for responsiveness when the container width changes
+window.addEventListener('resize', updateSlider);
+
+// Optional: Add swipe functionality for touch devices
+let touchStartX = 0;
+let touchEndX = 0;
+
+sliderTrack.addEventListener('touchstart', (e) => {
+touchStartX = e.touches[0].clientX;
+// Stop any ongoing transition for immediate response to touch
+sliderTrack.style.transition = 'none';
+});
+
+sliderTrack.addEventListener('touchmove', (e) => {
+// Calculate the current touch position and apply a real-time drag effect
+const touchCurrentX = e.touches[0].clientX;
+const dragDistance = touchCurrentX - touchStartX;
+const testimonialWidth = testimonials[0].offsetWidth;
+const computedStyle = getComputedStyle(sliderTrack);
+const gap = parseInt(computedStyle.gap) || 0;
+const slideStep = testimonialWidth + gap;
+
+// Calculate the new transform value based on drag, relative to the current slide position
+const currentTranslateX = -currentIndex * slideStep;
+sliderTrack.style.transform = `translateX(${currentTranslateX + dragDistance}px)`;
+});
+
+sliderTrack.addEventListener('touchend', (e) => {
+touchEndX = e.changedTouches[0].clientX;
+// Re-enable transition for the snap back/slide animation
+sliderTrack.style.transition = 'transform 0.5s ease-in-out';
+handleSwipe();
+});
+
+function handleSwipe() {
+const swipeThreshold = 50; // Minimum pixels for a swipe to register
+if (touchEndX < touchStartX - swipeThreshold) {
+// Swiped left (next slide)
+if (currentIndex < testimonials.length - 1) {
+currentIndex++;
+}
+} else if (touchEndX > touchStartX + swipeThreshold) {
+// Swiped right (previous slide)
+if (currentIndex > 0) {
+currentIndex--;
+}
+}
+updateSlider(); // Snap to the new slide or back to the current one
+}
+
 });
 
 // Phone number click tracking (optional analytics)
@@ -1070,14 +1387,6 @@ if (phoneLinks.length > 0) {
 phoneLinks.forEach(phoneLink => {
 phoneLink.addEventListener('click', function() {
 // Example: console.log('Phone number clicked:', this.href);
-// You could add analytics tracking here, e.g., using Google Analytics:
-// if (typeof gtag === 'function') {
-// gtag('event', 'click', {
-// 'event_category': 'Contact',
-// 'event_label': 'Phone Number Click',
-// 'value': this.href
-// });
-// }
 });
 });
 }
