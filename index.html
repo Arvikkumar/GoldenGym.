@@ -35,7 +35,6 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box;
-/* Ensure text breaks within containers on all devices */
 word-wrap: break-word;
 overflow-wrap: break-word;
 }
@@ -77,7 +76,7 @@ animation: spin 1s linear infinite;
 }
 
 .container {
-max-width: 1200px; /* Optimal width for desktop readability */
+max-width: 1200px;
 margin: 0 auto;
 padding: 0 20px;
 }
@@ -107,7 +106,6 @@ color: var(--text-dark);
 font-weight: 700;
 }
 
-/* Changed from p to h1 for semantic correctness */
 .hero h1.hero-main-tagline {
 font-family: 'Playfair Display', serif;
 font-size: 2.8rem;
@@ -181,14 +179,12 @@ outline: 2px solid var(--primary-accent-color);
 outline-offset: 2px;
 }
 
-/* Hero Section Updated with actual logo URL */
 .hero {
 background:
-linear-gradient(var(--black-transparent-hero), var(--black-transparent-hero)), /* Transparent overlay for text contrast */
-url('https://i.ibb.co/3ygtmP0m/Ronnie-Coleman.jpg') center center / cover no-repeat, /* Changed to cover */
-#1a1a1a; /* Dark fallback background color */
-
-background-attachment: fixed; /* Keeps the background fixed during scroll */
+linear-gradient(var(--black-transparent-hero), var(--black-transparent-hero)),
+url('https://i.ibb.co/3ygtmP0m/Ronnie-Coleman.jpg') center center / cover no-repeat,
+#1a1a1a;
+background-attachment: fixed;
 color: var(--white);
 text-align: center;
 padding: 100px 0;
@@ -209,7 +205,7 @@ margin: 40px 0 0;
 
 .stat-item {
 text-align: center;
-background: rgba(255,255,255,0.1); /* Slight background for stat items themselves for better separation */
+background: rgba(255,255,255,0.1);
 padding: 20px;
 border-radius: 8px;
 }
@@ -294,27 +290,27 @@ font-weight: bold;
 background: var(--bg-main);
 }
 
-/* MODIFIED: Styles for the new equipment slider */
 .equipment-slider {
 position: relative;
 overflow: hidden;
 margin-top: 20px;
-padding-bottom: 50px; /* Space for pagination dots */
+padding-bottom: 50px;
 }
 
-.equipment-gallery { /* This is now the slider track */
+.equipment-gallery { /* Slider track for photos */
 display: flex;
-transition: transform 0.5s ease-in-out;
+/* MODIFIED: Slower, smoother transition for photos */
+transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
 will-change: transform;
-gap: 0; /* Gap handled by item padding if needed, or set to 0 for seamless slides */
+gap: 0;
 }
 
-.equipment-item { /* This is now a slide item */
-flex: 0 0 100%; /* Each item takes full width of the slider viewport */
+.equipment-item {
+flex: 0 0 100%;
 max-width: 100%;
-height: 350px; /* Default height for prominent images */
+height: 350px;
 background: var(--bg-card);
-border-radius: 8px; /* Optional: if you want rounded corners on the image container */
+border-radius: 8px;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -327,13 +323,11 @@ box-sizing: border-box;
 .equipment-item img {
 width: 100%;
 height: 100%;
-object-fit: cover; /* Ensures image covers the area, might crop */
+object-fit: cover;
 display: block;
-border-radius: inherit; /* Inherit border-radius from parent if any */
+border-radius: inherit;
 }
 
-/* Re-using testimonial slider navigation styles, adjust if needed */
-/* Ensure IDs are unique if you copy-paste from testimonial styles */
 .equipment-slider .slider-nav {
 position: absolute;
 top: 50%;
@@ -347,14 +341,14 @@ pointer-events: none;
 }
 
 .equipment-slider .slider-nav button {
-background: rgba(0,0,0,0.3); /* Slight background for better visibility on images */
+background: rgba(0,0,0,0.3);
 color: var(--white);
 border: none;
-border-radius: 50%; /* Circular buttons */
-width: 40px; /* Fixed size */
+border-radius: 50%;
+width: 40px;
 height: 40px;
 padding: 0;
-font-size: 1.5rem; /* Arrow size */
+font-size: 1.5rem;
 cursor: pointer;
 display: flex;
 align-items: center;
@@ -384,7 +378,7 @@ bottom: 15px;
 width: 100%;
 }
 
-.equipment-slider .pagination-dot { /* Specific to equipment slider dots */
+.equipment-slider .pagination-dot {
 width: 10px;
 height: 10px;
 background-color: var(--border-color);
@@ -490,24 +484,24 @@ background: var(--bg-main);
 margin-bottom: 1.5rem;
 }
 
-/* Testimonials Slider Styles */
 .testimonials-slider {
 position: relative;
-overflow: hidden; /* Hide extra testimonials */
+overflow: hidden;
 margin-top: 20px;
-padding-bottom: 50px; /* Space for pagination dots */
+padding-bottom: 50px;
 }
 
-.slider-track {
+.slider-track { /* Slider track for testimonials */
 display: flex;
-transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
-will-change: transform; /* Performance hint for smoother animations */
-gap: 30px; /* Space between each testimonial item */
+/* MODIFIED: Slower, smoother transition for reviews, matching photos */
+transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+will-change: transform;
+gap: 30px;
 }
 
 .testimonial {
-flex: 0 0 100%; /* Each testimonial takes full width of the visible area */
-max-width: 100%; /* Ensure it doesn't exceed parent width */
+flex: 0 0 100%;
+max-width: 100%;
 background: var(--bg-card);
 padding: 30px;
 border-radius: 12px;
@@ -517,7 +511,7 @@ flex-direction: column;
 align-items: center;
 text-align: center;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
-box-sizing: border-box; /* Include padding and border in the element's total width and height */
+box-sizing: border-box;
 }
 
 .testimonial:hover {
@@ -573,7 +567,7 @@ color: var(--text-light);
 margin-top: 0.2rem;
 }
 
-.testimonials-slider .slider-nav { /* Specific to testimonial slider */
+.testimonials-slider .slider-nav {
 position: absolute;
 top: 50%;
 width: 100%;
@@ -585,7 +579,7 @@ z-index: 10;
 pointer-events: none;
 }
 
-.testimonials-slider .slider-nav button { /* Specific to testimonial slider buttons */
+.testimonials-slider .slider-nav button {
 background: transparent;
 color: var(--white);
 border: none;
@@ -618,7 +612,7 @@ opacity: 0.1;
 color: var(--white);
 }
 
-.testimonials-slider .slider-pagination { /* Specific to testimonial slider pagination */
+.testimonials-slider .slider-pagination {
 display: flex;
 justify-content: center;
 position: absolute;
@@ -626,7 +620,7 @@ bottom: 15px;
 width: 100%;
 }
 
-.testimonials-slider .pagination-dot { /* Specific to testimonial slider dots */
+.testimonials-slider .pagination-dot {
 width: 10px;
 height: 10px;
 background-color: var(--border-color);
@@ -668,16 +662,15 @@ margin-bottom: 10px;
 margin-bottom: 15px;
 }
 
-/* Style for icons */
 .contact-info .fa-whatsapp,
 .membership-section .fa-whatsapp {
-margin-right: 8px; /* Space between icon and text */
-color: #25D366; /* WhatsApp green */
+margin-right: 8px;
+color: #25D366;
 }
 
 .contact-info .fa-map-marker-alt {
-margin-right: 8px; /* Space between icon and text */
-color: var(--primary-accent-color); /* Match accent color */
+margin-right: 8px;
+color: var(--primary-accent-color);
 }
 
 
@@ -686,9 +679,8 @@ border-radius: 8px;
 overflow: hidden;
 box-shadow: 0 4px 12px var(--shadow-color-medium);
 height: 350px;
-/* Add a subtle hover effect to indicate clickability */
 transition: transform 0.3s ease, box-shadow 0.3s ease;
-cursor: pointer; /* Indicate it's clickable */
+cursor: pointer;
 }
 
 .map-container:hover {
@@ -700,7 +692,7 @@ box-shadow: 0 6px 18px var(--shadow-color-medium);
 width: 100%;
 height: 100%;
 border: 0;
-pointer-events: none; /* Allow clicks to pass through to the wrapping <a> tag */
+pointer-events: none; /* Allow clicks to pass to parent <a> tag if map itself is not interactive for clicks */
 }
 
 
@@ -753,7 +745,6 @@ border-top: 3px solid var(--primary-accent-color);
 margin-top: 40px;
 }
 
-/* Media query for larger desktops (e.g., > 1024px) to ensure optimal spacing */
 @media (min-width: 1025px) {
 .container {
 padding: 0 40px;
@@ -763,7 +754,7 @@ h2 {
 font-size: 2.5rem;
 }
 
-.hero h1.hero-main-tagline { /* Updated selector */
+.hero h1.hero-main-tagline {
 font-size: 3.5rem;
 }
 
@@ -794,14 +785,14 @@ padding: 40px;
 font-size: 1rem;
 }
 
-.equipment-item { /* Larger screens equipment item height */
+.equipment-item {
 height: 400px;
 }
 }
 
 
 @media (max-width: 768px) {
-.hero h1.hero-main-tagline { font-size: 2.2rem; } /* Updated selector */
+.hero h1.hero-main-tagline { font-size: 2.2rem; }
 .hero-sub-tagline { font-size: 1.1rem; }
 
 .stats { grid-template-columns: repeat(2, 1fr); }
@@ -823,7 +814,7 @@ h2 { font-size: 1.8rem; }
 .testimonial-text { font-size: 0.9rem; }
 .testimonial-author { font-size: 1rem; }
 
-.equipment-item { /* Tablet equipment item height */
+.equipment-item {
 height: 300px;
 }
 
@@ -838,22 +829,21 @@ font-size: 0.85rem;
 .stat-number { font-size: 2.5rem; }
 .stat-label { font-size: 0.85rem; }
 
-.hero h1.hero-main-tagline { font-size: 1.9rem; } /* Updated selector */
+.hero h1.hero-main-tagline { font-size: 1.9rem; }
 .hero-sub-tagline { font-size: 1rem; }
 h2 { font-size: 1.6rem; }
 .hours-grid { grid-template-columns: 1fr; }
 
-.equipment-item { /* Mobile equipment item height */
+.equipment-item {
 height: 250px;
 }
-/* Adjust nav button size for mobile */
 .equipment-slider .slider-nav button {
 width: 35px;
 height: 35px;
 font-size: 1.2rem;
 }
 .equipment-slider .slider-nav {
-padding: 0 5px; /* Reduce padding for nav on mobile */
+padding: 0 5px;
 }
 
 
@@ -1068,7 +1058,8 @@ font-size: 0.8rem;
     </div>
     </section>
 
-    <section class="hindi-services-section section-divider" lang="hi"> <div class="container">
+    <section class="hindi-services-section section-divider" lang="hi">
+    <div class="container">
     <p class="section-sub-title animate-on-scroll anim-target anim-fade-in-down">हमारी सेवाएँ</p>
     <h2 class="animate-on-scroll anim-target anim-fade-in-down">विकास कुमार के साथ</h2>
     <p class="animate-on-scroll anim-target anim-fade-in-up" style="margin-bottom: 1.5rem;">
@@ -1123,20 +1114,20 @@ font-size: 0.8rem;
 
     <h4>Location</h4>
     <p>
-        <a href="https://maps.app.goo.gl/YOUR_MAP_LINK_HERE" target="_blank" rel="noopener noreferrer" style="color: var(--primary-accent-color); text-decoration: none;" aria-label="View Golden Gym location on Google Maps">View on Google Maps</a>
+    <a href="https://www.google.com/maps/place/FXG4%2BH58" target="_blank" rel="noopener noreferrer" style="color: var(--primary-accent-color); text-decoration: none;" aria-label="View Golden Gym location on Google Maps">View on Google Maps</a>
     </p>
-    <a href="https://maps.app.goo.gl/YOUR_MAP_LINK_HERE" target="_blank"
+    <a href="https://www.google.com/maps/dir/?api=1&destination=FXG4%2BH58"
+    target="_blank"
     rel="noopener noreferrer"
     class="btn"
     style="margin-top: 15px; background-color: var(--text-dark); color: var(--white);">
     🌏 Get Directions
     </a>
     </div>
-    <a href="https://maps.app.goo.gl/YOUR_MAP_LINK_HERE" target="_blank" rel="noopener noreferrer" class="map-link">
+    <a href="https://www.google.com/maps/place/FXG4%2BH58" target="_blank" rel="noopener noreferrer" class="map-link" aria-label="View Golden Gym location on Google Maps (interactive map)">
     <div class="map-container">
     <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.737217502998!2d84.9212930750315!3d25.48048907754165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d557cc3005a91%3A0x6ee5833555760500!2sGolden%20Gym!5e0!3m2!1sen!2sin!4v1717229000000!5m2!1sen!2sin"
-    allowfullscreen=""
+    src="https://maps.google.com/maps?q=FXG4%2BH58&z=17&output=embed&hl=en" allowfullscreen=""
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"
     title="Golden Gym Location Map">
@@ -1165,9 +1156,9 @@ if (spinner) {
 spinner.style.opacity = '0';
 setTimeout(() => {
 spinner.style.display = 'none';
-}, 500); // Matches CSS transition
+}, 500);
 }
-}, 500); // Delay before starting fade out
+}, 500);
 });
 
 // Smooth scrolling for anchor links
@@ -1212,7 +1203,6 @@ el.classList.add('is-visible');
 // --- Scroll-Triggered Animations (including stats numbers) ---
 const scrollAnimatedElements = document.querySelectorAll('.animate-on-scroll');
 
-// Function to animate counting numbers using requestAnimationFrame
 function animateCountUp(element, target, suffix = '', duration = 4000) {
 if (element.dataset.animated === 'true') return;
 element.dataset.animated = 'true';
@@ -1247,7 +1237,6 @@ entries.forEach(entry => {
 if (entry.isIntersecting) {
 const el = entry.target;
 
-// For stagger containers (but not the equipment slider itself, as it's handled differently)
 if (el.classList.contains('stagger-container') && !el.classList.contains('equipment-slider')) {
 const itemsToStagger = el.querySelectorAll('.stagger-item.anim-target');
 itemsToStagger.forEach((item, index) => {
@@ -1278,8 +1267,6 @@ setTimeout(() => animateCountUp(statNumberEl, targetVal, suffix), 200);
 }, (el.dataset.staggerDelay ? parseInt(el.dataset.staggerDelay) : 0) + index * 150);
 });
 } else if (el.classList.contains('equipment-slider') || el.classList.contains('testimonials-slider')) {
-// For sliders, just make the main container visible
-// The slider's internal logic will handle showing items
 el.classList.add('is-visible');
 } else {
 el.classList.add('is-visible');
@@ -1287,12 +1274,11 @@ el.classList.add('is-visible');
 
 let unobserveDelay = (el.classList.contains('stats') || el.classList.contains('stagger-container') || el.classList.contains('equipment-slider') || el.classList.contains('testimonials-slider')) ? 3000 : 1000;
 setTimeout(() => {
-if(el.parentNode && observer) { // Check if observer is still valid
+if(el.parentNode && observer) {
     try {
         observer.unobserve(el);
     } catch (e) {
         // console.warn("Error unobserving element:", el, e);
-        // Element might have been removed from DOM before unobserve was called
     }
 }
 }, unobserveDelay);
@@ -1345,7 +1331,7 @@ animateCountUp(statEl, target, suffix);
 // --- Generic Slider Logic Function ---
 function initializeSlider(sliderSelector, trackSelector, itemSelector, prevBtnId, nextBtnId, paginationId) {
 const sliderContainer = document.querySelector(sliderSelector);
-if (!sliderContainer) return; // Exit if slider container not found
+if (!sliderContainer) return;
 
 const sliderTrack = sliderContainer.querySelector(trackSelector);
 const prevBtn = document.getElementById(prevBtnId);
@@ -1389,7 +1375,7 @@ dot.classList.add('active');
 dot.addEventListener('click', () => {
 currentIndex = index;
 updateSliderPosition();
-handleUserInteraction(); // Auto-scroll pause/resume
+handleUserInteraction();
 });
 paginationContainer.appendChild(dot);
 });
@@ -1401,23 +1387,23 @@ nextBtn.disabled = currentIndex >= slides.length - 1;
 }
 
 function advanceSlide() {
-if (slides.length <= 1) return; // Don't advance if only one or no slides
+if (slides.length <= 1) return;
 currentIndex++;
 if (currentIndex >= slides.length) {
-currentIndex = 0; // Loop back to the first slide
+currentIndex = 0;
 }
 updateSliderPosition();
 }
 
 function startAutoScrolling() {
-if (slides.length <= 1) return; // Don't start if not enough slides
-clearInterval(autoScrollTimerId); // Clear any existing interval
+if (slides.length <= 1) return;
+clearInterval(autoScrollTimerId);
 autoScrollTimerId = setInterval(advanceSlide, autoScrollInterval);
 }
 
 function pauseAutoScrolling() {
 clearInterval(autoScrollTimerId);
-clearTimeout(resumeScrollTimeoutId); // Clear any pending resume
+clearTimeout(resumeScrollTimeoutId);
 }
 
 function handleUserInteraction() {
@@ -1442,28 +1428,24 @@ handleUserInteraction();
 }
 });
 
-// Initial setup
 updateSliderPosition();
-if (slides.length > 1) { // Start auto-scrolling only if there's more than one slide
+if (slides.length > 1) {
     startAutoScrolling();
 }
 
 
 window.addEventListener('resize', () => {
     updateSliderPosition();
-    // Optionally, you might want to pause and restart auto-scrolling on resize
-    // if the layout changes significantly, but for now, just updating position.
 });
 
-// Swipe functionality
 let touchStartX = 0;
 let touchEndX = 0;
 
 sliderTrack.addEventListener('touchstart', (e) => {
 touchStartX = e.touches[0].clientX;
-sliderTrack.style.transition = 'none'; // Disable transition for dragging
-pauseAutoScrolling(); // Pause auto-scroll on touch start
-clearTimeout(resumeScrollTimeoutId); // Clear pending resume
+sliderTrack.style.transition = 'none'; // Disable transition for immediate drag feedback
+pauseAutoScrolling();
+clearTimeout(resumeScrollTimeoutId);
 }, { passive: true });
 
 sliderTrack.addEventListener('touchmove', (e) => {
@@ -1479,50 +1461,46 @@ sliderTrack.style.transform = `translateX(${currentTranslateX + dragDistance}px)
 
 sliderTrack.addEventListener('touchend', (e) => {
 touchEndX = e.changedTouches[0].clientX;
-sliderTrack.style.transition = 'transform 0.5s ease-in-out'; // Re-enable transition
+// Revert to CSS-defined transition by clearing the inline style
+sliderTrack.style.transition = '';
 handleSwipeGesture();
-// Resume auto-scrolling after swipe, handled by handleUserInteraction in handleSwipeGesture
 });
 
 function handleSwipeGesture() {
-const swipeThreshold = 50; // Min pixels for swipe
+const swipeThreshold = 50;
 let swiped = false;
-if (touchEndX < touchStartX - swipeThreshold) { // Swiped left
+if (touchEndX < touchStartX - swipeThreshold) {
 if (currentIndex < slides.length - 1) {
 currentIndex++;
 swiped = true;
 }
-} else if (touchEndX > touchStartX + swipeThreshold) { // Swiped right
+} else if (touchEndX > touchStartX + swipeThreshold) {
 if (currentIndex > 0) {
 currentIndex--;
 swiped = true;
 }
 }
-updateSliderPosition(); // Snap to new or current slide
+updateSliderPosition();
 if (swiped) {
-handleUserInteraction(); // Pause and schedule resume if a swipe occurred
+handleUserInteraction();
 } else {
-// If not a significant swipe, just resume auto-scrolling
-// This handles cases where user just taps or slightly drags without changing slide
 resumeScrollTimeoutId = setTimeout(startAutoScrolling, autoScrollResumeDelay);
 }
 }
 }
 
-// Initialize Testimonials Slider
 initializeSlider(
 '.testimonials-slider',
-'.slider-track',
+'.slider-track', // Note: This is the specific class for testimonials slider track
 '.testimonial',
 'prevSlide',
 'nextSlide',
 'sliderPagination'
 );
 
-// Initialize Equipment Slider
 initializeSlider(
 '.equipment-slider',
-'.equipment-gallery',
+'.equipment-gallery', // This is the specific class for equipment slider track
 '.equipment-item',
 'prevEquipmentSlide',
 'nextEquipmentSlide',
@@ -1531,13 +1509,11 @@ initializeSlider(
 
 });
 
-// Phone number click tracking (optional analytics)
 const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
 if (phoneLinks.length > 0) {
 phoneLinks.forEach(phoneLink => {
 phoneLink.addEventListener('click', function() {
-// Example: console.log('Phone number clicked:', this.href);
-// You could add analytics tracking here if needed.
+// console.log('Phone number clicked:', this.href);
 });
 });
 }
