@@ -215,7 +215,7 @@ border-radius: 8px;
 
 .stat-number {
 font-family: 'Merriweather', serif;
-font-size: 2.5rem;
+font-size: 3.5rem; /* MODIFIED: Increased from 2.5rem */
 font-weight: 700;
 color: var(--stat-number-color);
 display: block;
@@ -295,12 +295,14 @@ background: var(--bg-main);
 
 .equipment-gallery {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-gap: 15px;
+/* MODIFIED: Increased minmax for larger items by default */
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 20px; /* MODIFIED: Increased gap slightly */
 }
 
 .equipment-item {
-height: 150px;
+/* MODIFIED: Increased height */
+height: 220px;
 background: var(--bg-card);
 border-radius: 8px;
 display: flex;
@@ -722,6 +724,14 @@ padding: 40px; /* More padding inside testimonials */
 .testimonial-text {
 font-size: 1rem; /* Slightly larger testimonial text for readability */
 }
+/* MODIFIED: Optionally make equipment items even larger on very wide screens */
+.equipment-gallery {
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 25px;
+}
+.equipment-item {
+height: 250px;
+}
 }
 
 
@@ -730,7 +740,7 @@ font-size: 1rem; /* Slightly larger testimonial text for readability */
 .hero-sub-tagline { font-size: 1.1rem; }
 
 .stats { grid-template-columns: repeat(2, 1fr); }
-.stat-number { font-size: 2.2rem; }
+.stat-number { font-size: 3.0rem; } /* MODIFIED: Increased from 2.2rem */
 .stat-label { font-size: 0.9rem; }
 
 .trainer-content { grid-template-columns: 1fr; text-align: center; }
@@ -748,7 +758,14 @@ h2 { font-size: 1.8rem; }
 .testimonial-text { font-size: 0.9rem; }
 .testimonial-author { font-size: 1rem; }
 
-.equipment-item { height: 120px; }
+/* MODIFIED: Adjust equipment item size for tablets */
+.equipment-gallery {
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+gap: 15px;
+}
+.equipment-item {
+height: 180px; /* Was 120px */
+}
 
 .site-footer {
 padding: 20px 15px;
@@ -764,7 +781,7 @@ background-attachment: scroll;
 
 @media (max-width: 480px) {
 .stats { grid-template-columns: 1fr; }
-.stat-number { font-size: 2rem; }
+.stat-number { font-size: 2.5rem; } /* MODIFIED: Increased from 2rem */
 .stat-label { font-size: 0.85rem; }
 
 .hero-main-tagline { font-size: 1.9rem; }
@@ -772,8 +789,15 @@ background-attachment: scroll;
 h2 { font-size: 1.6rem; }
 .hours-grid { grid-template-columns: 1fr; }
 /* Testimonials will remain 1fr, but the slider handles the horizontal movement */
-.equipment-gallery { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
-.equipment-item { height: 100px; }
+
+/* MODIFIED: Adjust equipment item size for mobile */
+.equipment-gallery {
+grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Was minmax(120px, 1fr) */
+gap: 10px;
+}
+.equipment-item {
+height: 140px; /* Was 100px */
+}
 
 .site-footer {
 font-size: 0.8rem;
@@ -850,28 +874,28 @@ At our gym, you're not just another member—you’re part of the family, come a
 <h2 class="animate-on-scroll anim-target anim-fade-in-down"> A Quick Glance Inside the Gym </h2>
 <div class="equipment-gallery animate-on-scroll stagger-container" style="margin-top: 40px;">
 <div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0s;">
-<img src="https://i.ibb.co/0NPPDPs/Picsart-25-06-01-16-40-18-880.jpg" alt="Golden Gym Equipment 1" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+1';">
+<img src="https://i.ibb.co/0NPPDPs/Picsart-25-06-01-16-40-18-880.jpg" alt="Golden Gym Equipment 1" onerror="this.onerror=null; this.src='https://placehold.co/220x220/e0e0e0/777?text=Image+1';">
 </div>
 <div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0.1s;">
-<img src="https://i.ibb.co/zW1DSwcR/IMG-20250601-WA0075.jpg" alt="Golden Gym Equipment 2" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+2';">
+<img src="https://i.ibb.co/zW1DSwcR/IMG-20250601-WA0075.jpg" alt="Golden Gym Equipment 2" onerror="this.onerror=null; this.src='https://placehold.co/220x220/e0e0e0/777?text=Image+2';">
 </div>
 <div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0.2s;">
-<img src="https://i.ibb.co/hxYg8s1b/IMG-20250601-163510.jpg" alt="Golden Gym Equipment 3" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+3';">
+<img src="https://i.ibb.co/hxYg8s1b/IMG-20250601-163510.jpg" alt="Golden Gym Equipment 3" onerror="this.onerror=null; this.src='https://placehold.co/220x220/e0e0e0/777?text=Image+3';">
 </div>
 <div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0.3s;">
-<img src="https://i.ibb.co/fVfS5xf3/IMG-20250601-WA0071.jpg" alt="Golden Gym Equipment 4" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+4';">
+<img src="https://i.ibb.co/fVfS5xf3/IMG-20250601-WA0071.jpg" alt="Golden Gym Equipment 4" onerror="this.onerror=null; this.src='https://placehold.co/220x220/e0e0e0/777?text=Image+4';">
 </div>
 <div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0.4s;">
-<img src="https://i.ibb.co/bMhtJ3W4/20250601-062434-Leo2-0-Moto-G54.jpg" alt="Golden Gym Equipment 5" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+5';">
+<img src="https://i.ibb.co/bMhtJ3W4/20250601-062434-Leo2-0-Moto-G54.jpg" alt="Golden Gym Equipment 5" onerror="this.onerror=null; this.src='https://placehold.co/220x220/e0e0e0/777?text=Image+5';">
 </div>
 <div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0.5s;">
-<img src="https://i.ibb.co/7NJcGLDm/IMG-20250601-161844.jpg" alt="Golden Gym Equipment 6" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+6';">
+<img src="https://i.ibb.co/7NJcGLDm/IMG-20250601-161844.jpg" alt="Golden Gym Equipment 6" onerror="this.onerror=null; this.src='https://placehold.co/220x220/e0e0e0/777?text=Image+6';">
 </div>
 <div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0.6s;">
-<img src="https://i.ibb.co/C3Rnk9mH/Picsart-25-06-01-16-45-28-236.jpg" alt="Golden Gym Equipment 7" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+7';">
+<img src="https://i.ibb.co/C3Rnk9mH/Picsart-25-06-01-16-45-28-236.jpg" alt="Golden Gym Equipment 7" onerror="this.onerror=null; this.src='https://placehold.co/220x220/e0e0e0/777?text=Image+7';">
 </div>
 <div class="equipment-item anim-target anim-scale-in stagger-item" style="transition-delay: 0.7s;">
-<img src="https://i.ibb.co/r2hQznt5/20250601-063127-Leo2-0-Moto-G54.jpg" alt="Golden Gym Equipment 8" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/777?text=Image+8';">
+<img src="https://i.ibb.co/r2hQznt5/20250601-063127-Leo2-0-Moto-G54.jpg" alt="Golden Gym Equipment 8" onerror="this.onerror=null; this.src='https://placehold.co/220x220/e0e0e0/777?text=Image+8';">
 </div>
 </div>
 </div>
@@ -1269,6 +1293,7 @@ let currentIndex = 0;
 function updateSlider() {
 // Get the actual width of a single testimonial, including its own padding/border
 // This assumes all testimonials have the same width, which they should with flex: 0 0 100%;
+if (testimonials.length === 0) return; // Guard against empty testimonials
 const testimonialWidth = testimonials[0].offsetWidth;
 
 // Get the computed style for the gap from the slider-track
@@ -1288,6 +1313,7 @@ updateNavigationButtons();
 
 // Function to create and update pagination dots (Re-enabled)
 function updatePaginationDots() {
+if (!paginationContainer) return; // Guard if pagination container doesn't exist
 paginationContainer.innerHTML = ''; // Clear existing dots
 testimonials.forEach((_, index) => {
 const dot = document.createElement('span');
@@ -1306,79 +1332,87 @@ paginationContainer.appendChild(dot);
 
 // Function to enable/disable navigation buttons
 function updateNavigationButtons() {
+if (!prevBtn || !nextBtn) return; // Guard if buttons don't exist
 prevBtn.disabled = currentIndex === 0;
 nextBtn.disabled = currentIndex === testimonials.length - 1;
 }
 
 // Event Listeners for Navigation Buttons
-prevBtn.addEventListener('click', () => {
-if (currentIndex > 0) {
-currentIndex--;
-updateSlider();
+if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    });
 }
-});
 
-nextBtn.addEventListener('click', () => {
-if (currentIndex < testimonials.length - 1) {
-currentIndex++;
-updateSlider();
+if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < testimonials.length - 1) {
+            currentIndex++;
+            updateSlider();
+        }
+    });
 }
-});
 
 // Initialize slider on DOMContentLoaded
-updateSlider(); // Call once to set initial state and create dots
+if (sliderTrack && testimonials.length > 0) {
+    updateSlider(); // Call once to set initial state and create dots
 
-// Add a resize listener to update slider position if window resizes
-// This is crucial for responsiveness when the container width changes
-window.addEventListener('resize', updateSlider);
+    // Add a resize listener to update slider position if window resizes
+    // This is crucial for responsiveness when the container width changes
+    window.addEventListener('resize', updateSlider);
 
-// Optional: Add swipe functionality for touch devices
-let touchStartX = 0;
-let touchEndX = 0;
+    // Optional: Add swipe functionality for touch devices
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-sliderTrack.addEventListener('touchstart', (e) => {
-touchStartX = e.touches[0].clientX;
-// Stop any ongoing transition for immediate response to touch
-sliderTrack.style.transition = 'none';
-});
+    sliderTrack.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        // Stop any ongoing transition for immediate response to touch
+        sliderTrack.style.transition = 'none';
+    }, { passive: true });
 
-sliderTrack.addEventListener('touchmove', (e) => {
-// Calculate the current touch position and apply a real-time drag effect
-const touchCurrentX = e.touches[0].clientX;
-const dragDistance = touchCurrentX - touchStartX;
-const testimonialWidth = testimonials[0].offsetWidth;
-const computedStyle = getComputedStyle(sliderTrack);
-const gap = parseInt(computedStyle.gap) || 0;
-const slideStep = testimonialWidth + gap;
+    sliderTrack.addEventListener('touchmove', (e) => {
+        // Calculate the current touch position and apply a real-time drag effect
+        const touchCurrentX = e.touches[0].clientX;
+        const dragDistance = touchCurrentX - touchStartX;
+        // Ensure testimonials[0] exists before accessing offsetWidth
+        if (!testimonials[0]) return;
+        const testimonialWidth = testimonials[0].offsetWidth;
+        const computedStyle = getComputedStyle(sliderTrack);
+        const gap = parseInt(computedStyle.gap) || 0;
+        const slideStep = testimonialWidth + gap;
 
-// Calculate the new transform value based on drag, relative to the current slide position
-const currentTranslateX = -currentIndex * slideStep;
-sliderTrack.style.transform = `translateX(${currentTranslateX + dragDistance}px)`;
-});
+        // Calculate the new transform value based on drag, relative to the current slide position
+        const currentTranslateX = -currentIndex * slideStep;
+        sliderTrack.style.transform = `translateX(${currentTranslateX + dragDistance}px)`;
+    }, { passive: true });
 
-sliderTrack.addEventListener('touchend', (e) => {
-touchEndX = e.changedTouches[0].clientX;
-// Re-enable transition for the snap back/slide animation
-sliderTrack.style.transition = 'transform 0.5s ease-in-out';
-handleSwipe();
-});
+    sliderTrack.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        // Re-enable transition for the snap back/slide animation
+        sliderTrack.style.transition = 'transform 0.5s ease-in-out';
+        handleSwipe();
+    });
 
-function handleSwipe() {
-const swipeThreshold = 50; // Minimum pixels for a swipe to register
-if (touchEndX < touchStartX - swipeThreshold) {
-// Swiped left (next slide)
-if (currentIndex < testimonials.length - 1) {
-currentIndex++;
+    function handleSwipe() {
+        const swipeThreshold = 50; // Minimum pixels for a swipe to register
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // Swiped left (next slide)
+            if (currentIndex < testimonials.length - 1) {
+                currentIndex++;
+            }
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+            // Swiped right (previous slide)
+            if (currentIndex > 0) {
+                currentIndex--;
+            }
+        }
+        updateSlider(); // Snap to the new slide or back to the current one
+    }
 }
-} else if (touchEndX > touchStartX + swipeThreshold) {
-// Swiped right (previous slide)
-if (currentIndex > 0) {
-currentIndex--;
-}
-}
-updateSlider(); // Snap to the new slide or back to the current one
-}
-
 });
 
 // Phone number click tracking (optional analytics)
